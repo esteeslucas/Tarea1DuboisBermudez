@@ -1,7 +1,12 @@
 def check_char(x):
     v = str(x)
     if (not(v.isalpha()) or len(v)!=1):
-        return ("Error 69420, el valor no es un único caracter entre A-Z")
+        if (not isinstance(x,str)):
+            return ("Error, se introdujo un caracter que no es de tipo string")
+        elif(len(v)!=1):
+            return ("Error, se introdujo más de un caracter")
+        elif (not(v.isalpha())):
+              return ("Error, se introdujo un caracter que no pertenece al alfabeto")
     else:
         return (0)
 
